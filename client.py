@@ -12,12 +12,13 @@ PORT = 65432        # Port to connect to
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((HOST, PORT))
 
-# Send message
-message = "Hello, Server!"
-client_socket.sendall(message.encode())
+# Send multiple messages
+messages = ["Hello Server!", "Testing Testing", "Goodbye!"]
+for message in messages:
+    client_socket.sendall(message.encode())
 
-# Receive response
-data = client_socket.recv(1024)
-print(f"Server says: {data.decode()}")
+    # Receive response
+    data = client_socket.recv(1024)
+    print(f"Server: {data.decode()}")
 
 client_socket.close()

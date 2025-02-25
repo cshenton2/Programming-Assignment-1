@@ -5,11 +5,7 @@ This project involves implementing a basic client-server model using TCP sockets
 
 The goal of this assignment is to introduce socket programming, multi-threaded or asynchronous network handling, and encryption basics in network communication. This project will provide hands-on experience with TCP/IP protocols, secure messaging, and best practices in software development.
 
-## Project Requirements
-
-### GitHub Repository
-- Store the project in a private GitHub repository.
-- Maintain a proper commit history showing progressive development.
+## Project Information
 
 ### TCP Server Implementation
 - Listens on a specific port.
@@ -31,7 +27,10 @@ The goal of this assignment is to introduce socket programming, multi-threaded o
 ### Multi-Threading/Async Handling
 - The server must support multiple clients using either multi-threading or an asynchronous approach.
 
-## Project Structure and Submission
+### Design Explanation Document (design_explanation.md)
+- Describes client-server communication.
+- Explains chosen threading/async model.
+- Provides an overview of encryption implementation.
 
 ### Makefile Commands
 - **make build** - Compile the project (if applicable).
@@ -55,8 +54,3 @@ The goal of this assignment is to introduce socket programming, multi-threaded o
 ### Dependencies
 - Python 3.x
 - Required libraries (e.g., `socket`, `threading`, `cryptography`, `OpenSSL`)
-
-### Design Explanation Document
-- Describes client-server communication.
-- Explains chosen threading/async model.
-- Provides an overview of encryption implementation.
