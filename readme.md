@@ -1,10 +1,9 @@
-# Assignment 1: Simple Client-Server Communication
+# Programming Assignment 1: Simple Client-Server Communication
 
 ## Introduction
-This project involves implementing a basic client-server model using TCP sockets to facilitate communication between a server and multiple clients. The server will listen for incoming connections, process messages sent by clients, log these messages, and send an acknowledgment back. The client will establish a connection, send a user-provided message, and display the server's response.
+This project implements a basic client-server model using TCP sockets to facilitate communication between a server and multiple clients. The server will listen for incoming connections, process messages sent by clients, log these messages, and send an acknowledgment back. The client will establish a connection, send a user-provided message, and display the server's response.
 
-The goal of this assignment is to introduce socket programming, multi-threaded or asynchronous network handling, and encryption basics in network communication. This project will provide hands-on experience with TCP/IP protocols, secure messaging, and best practices in software development.
-
+The goal of this assignment is to introduce socket programming, multi-threaded or asynchronous network handling, and encryption basics in network communication. This project will provide hands-on experience with TCP/IP protocols and utilize encryption and secure messaging.
 ## Project Information
 
 ### TCP Server Implementation
@@ -32,25 +31,21 @@ The goal of this assignment is to introduce socket programming, multi-threaded o
 - Explains chosen threading/async model.
 - Provides an overview of encryption implementation.
 
-### Makefile Commands
-- **make build** - Compile the project (if applicable).
+## Makefile Commands
+- **make build** - Compile the project (not necessary).
 - **make run** - Start the server and client.
-- **make clean** - Remove compiled files.
+- **make clean** - Remove compiled files (not necessary).
 
-### Installation & Setup
+## Installation & Setup
 1. Install required dependencies:
    ```sh
    pip install -r requirements.txt
    ```
-2. Start the server:
+2. Start the server and client:
    ```sh
    make run
    ```
-3. Run the client:
-   ```sh
-   python client.py
-   ```
 
-### Dependencies
-- Python 3.x
-- Required libraries (e.g., `socket`, `threading`, `cryptography`, `OpenSSL`)
+## Dependencies
+- Python 3.9.4 or later
+- Required libraries: `pycryptodome`

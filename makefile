@@ -3,7 +3,7 @@ PYTHON := python
 build:
 	@echo "Nothing to build."
 
-# Command to run the server and client together (used a .bat )
+# Command to run the server and client together (used a .bat because Windows was causing issues)
 run:
 	@run.bat
 

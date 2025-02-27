@@ -1,3 +1,5 @@
+:: batch file to start server and client respectively
+
 @echo off
 echo Starting server...
 start "" python server.py
