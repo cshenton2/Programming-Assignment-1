@@ -30,17 +30,22 @@ def decrypt(ciphertext, key):
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((HOST, PORT))
 
-# Send multiple messages (encrypted)
-messages = ["Hello World!", "Testing Testing", "Goodbye!"]
+# Collect messages from user
+messages = []
+print("Enter your messages (type 'send' on a new line when finished):")
+while True:
+    message = input("> ")
+    if message.lower() == 'send':
+        break
+    messages.append(message)
+
+# Send all collected messages (encrypted)
 for message in messages:
     encrypted_message = encrypt(message, KEY)
     client_socket.sendall(encrypted_message)
 
     # Receive encrypted response
     encrypted_response = client_socket.recv(1024)
-    
-    # Optional print statement to see encryption
-    # print(f"Encrypted Message: {encrypted_message}")
     
     # Decrypt response
     decrypted_response = decrypt(encrypted_response, KEY)
