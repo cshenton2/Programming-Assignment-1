@@ -1,9 +1,8 @@
 # Programming Assignment 1: Simple Client-Server Communication
 
 ## Introduction
-This project implements a basic client-server model using TCP sockets to facilitate communication between a server and multiple clients. The server will listen for incoming connections, process messages sent by clients, log these messages, and send an acknowledgment back. The client will establish a connection, send a user-provided message, and display the server's response.
+This project implements a basic client-server model using TCP sockets to facilitate communication between a server and multiple clients. The server will listen for incoming connections, process messages sent by clients, log these messages, and send an acknowledgment back. The client will establish a connection, send a user-provided message (or messages), and display the server's response. The goal of this assignment is to introduce socket programming, threading, and encryption basics.
 
-The goal of this assignment is to introduce socket programming, multi-threaded or asynchronous network handling, and encryption basics in network communication. This project will provide hands-on experience with TCP/IP protocols and utilize encryption and secure messaging.
 ## Project Information
 
 ### TCP Server Implementation

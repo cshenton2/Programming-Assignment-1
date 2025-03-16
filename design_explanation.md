@@ -1,12 +1,11 @@
-# Design Explanation Document
+# Design Explanation
 
-This document outlines the design of a client-server application implemented in Python. It describes the communication mechanism between the client and server, the threading model used for handling multiple clients, and the encryption approach employed to secure data transmission.
+This document outlines the design of a client-server application implemented in Python. It demonstrates threading used for handling multiple clients, and encryption used to secure data transmission.
 
 ## Client-Server Communication
 
 ### Overview
-The application uses a TCP-based socket connection to facilitate communication between a single server and one or more clients. The server listens for incoming connections on a predefined host (`127.0.0.1`) and port (`12345`), while the client initiates a connection to this address.
-
+The application uses a TCP-based socket connection for communication between server and one or more clients. The server listens for connections on a predefined host (`127.0.0.1`) and port (`12345`).
 ### Communication Flow
 1. **Connection Establishment**:
    - The server creates a TCP socket using `socket.socket(socket.AF_INET, socket.SOCK_STREAM)`, binds it to `HOST:PORT`, and listens for incoming connections with `server_socket.listen()`.
@@ -64,7 +63,7 @@ Data security is ensured using the **AES (Advanced Encryption Standard)** symmet
 - **Encryption** (`encrypt` function):
   1. The plaintext is encoded to bytes (`.encode()`).
   2. Padding is applied to align with the block size.
-  3. A new AES cipher object is created with the key, CBC mode, and random IV.
+  3. A new AES cipher object is created with the key, CBC mode, and a random IV.
   4. The padded plaintext is encrypted, and the IV is concatenated with the ciphertext.
 - **Decryption** (`decrypt` function):
   1. The IV is extracted from the first 16 bytes of the received data.
@@ -73,7 +72,7 @@ Data security is ensured using the **AES (Advanced Encryption Standard)** symmet
 
 ### Security Considerations
 - **Strengths**:
-  - AES-CBC with a random IV per message provides confidentiality and prevents pattern analysis across identical plaintexts.
+  - AES-CBC with a random IV for each message provides confidentiality
   - The 256-bit key length (32 bytes) is robust against brute-force attacks.
 - **Weaknesses**:
   - The hardcoded key eliminates key distribution security, making it vulnerable if the code is exposed.
@@ -81,4 +80,4 @@ Data security is ensured using the **AES (Advanced Encryption Standard)** symmet
   - Error handling is minimal; decryption failures (e.g., wrong key or corrupted data) are logged but don’t gracefully recover.
 
 ## Conclusion
-This design provides a functional client-server system with encrypted communication and multi-client support via threading. It prioritizes simplicity and reliability for an educational context, while demonstrating core concepts like socket programming, concurrency, and symmetric encryption. Future improvements could include dynamic key exchange, message integrity checks, and an asynchronous model for scalability.
+This design provides a functional client-server system with encrypted communication and multi-client support via threading. It prioritizes simplicity and reliability and demonstrates concepts like socket programming, concurrency, and encryption.
